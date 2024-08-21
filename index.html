@@ -15,6 +15,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
+
+    <!-- font awesome link  -->
+    <script src="https://kit.fontawesome.com/d8894525ac.js" crossorigin="anonymous"></script>
+
     <!-- tailwind and daisy ui cdn link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,7 +32,10 @@
                     },
                     fontFamily: {
                         Montserrat: 'Montserrat',
-                    }
+                    },
+                    backgroundImage: {
+                        'banner_bg': "url('./images/banner-bg.png')",
+                    },
                 }
             }
         }
@@ -36,11 +43,149 @@
 
 </head>
 
-<body class="font-Montserrat">
+<body class="font-Montserrat w-11/12 md:w-10/12 mx-auto">
     <!-- header starts here  -->
-
     <header>
+        <nav class="navbar mt-7">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-black font-semibold text-lg">
+                        <li><a>Home</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Cart</a></li>
+                        <li><a>Contact</a></li>
+                    </ul>
+                </div>
+                <a href="#"><img src="./images/logo.png" alt=""></a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 text-black font-semibold text-lg">
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Cart</a></li>
+                    <li><a>Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end w-11/12 ">
+                <label class="input drop-shadow-lg rounded-xl flex items-center gap-2 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="size-8 text-black">
+                        <path fill-rule="evenodd"
+                            d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <input type="text"
+                        class="grow placeholder:text-black font-semibold mr-3 border-r-2 border-gray-400 text-lg outline-none"
+                        placeholder="Search" />
+                    <div class="relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-10">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                        </svg>
+                        <div class="bg-primary rounded-full absolute -right-1 -top-0 shadow-orange-500 ">
+                            <small class="p-2 text-white">2</small>
+                        </div>
+                    </div>
 
+                </label>
+
+            </div>
+        </nav>
+
+        <!-- banner section  -->
+        <section class="flex flex-col lg:flex-row mt-16 justify-between bg-none md:bg-banner_bg bg-no-repeat bg-center">
+
+            <!-- text content  -->
+            <div class="w-full md:w-1/2">
+                <div class="bg-orange-100 flex items-center rounded-[32px] pl-3 w-60 justify-between">
+                    <p class="text-primary">Bike Delivery</p>
+                    <img class="rounded-full p-2" src="images/delivery.png" alt="">
+                </div>
+                <h1 class="text-4xl lg:text-7xl text-black font-bold uppercase leading-tight mt-10 md:mt-20">The Fastest
+                    <span class="text-primary">Delivery</span>
+                    In <span class="text-primary">Your City</span>
+                </h1>
+                <p class="text-black text-lg font-medium mt-10">Enjoy gourmet meals from top restaurants, delivered
+                    swiftly to
+                    your door.
+                    Indulge in exceptional
+                    dining at home with ease and convenience.</p>
+                <div class="mt-10 flex flex-col md:flex-row  items-start md:items-center gap-8">
+                    <button
+                        class="py-5 px-11 rounded-2xl bg-gradient-to-tl from-primary to-[#EFAB68] text-white font-bold text-xl">Order
+                        Now</button>
+
+                    <div class="flex items-center gap-5 mb-8 md:mb-0">
+                        <div class="bg-gray-50 rounded-full  drop-shadow-xl px-6 py-4">
+                            <i class="fa-solid fa-play text-4xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-black">Order Process</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- cards container  -->
+            <div class=" grid grid-cols-1 md:grid-cols-2 mt-16 gap-x-5 gap-y-24 w-full  md:w-2/5">
+
+                <!-- card -1  -->
+                <div class="card shadow-lg rounded-3xl w-full h-full py-3">
+                    <figure>
+                        <img src="images/burger.png" alt="burger" class="rounded-xl absolute" />
+                    </figure>
+                    <div class="flex flex-col items-center justify-center mt-16 space-y-3">
+                        <h2 class="card-title text-black font-bold text-xl">Burger</h2>
+                        <p class="text-lg font-medium text-black">Mushroom Sauce</p>
+                        <h5 class="text-lg font-semibold"><span class="text-red-700">$</span>5.15</h5>
+                    </div>
+                </div>
+
+                <!-- card -2  -->
+                <div class="card shadow-lg rounded-3xl w-full h-full py-3">
+                    <figure>
+                        <img src="images/combo.png" alt="Food Combo" class="rounded-xl absolute" />
+                    </figure>
+                    <div class="flex flex-col items-center justify-center mt-16 space-y-3">
+                        <h2 class="card-title text-black font-bold text-xl">Food Combo</h2>
+                        <p class="text-lg font-medium text-black">Mushroom Sauce</p>
+                        <h5 class="text-lg font-semibold"><span class="text-red-700">$</span>5.15</h5>
+                    </div>
+                </div>
+
+                <!-- card-3  -->
+                <div class="card shadow-lg rounded-3xl w-full h-full py-3">
+                    <figure>
+                        <img src="images/Pizza.png" alt="Pizza" class="rounded-xl absolute" />
+                    </figure>
+                    <div class="flex flex-col items-center justify-center mt-16 space-y-3">
+                        <h2 class="card-title text-black font-bold text-xl">Pizza</h2>
+                        <p class="text-lg font-medium text-black">Mushroom Sauce</p>
+                        <h5 class="text-lg font-semibold"><span class="text-red-700">$</span>5.15</h5>
+                    </div>
+                </div>
+
+                <!-- card-4  -->
+                <div class="card  shadow-lg rounded-3xl w-full h-full py-3">
+                    <figure>
+                        <img src="images/cake.png" alt="Cake" class="rounded-xl absolute" />
+                    </figure>
+                    <div class="flex flex-col items-center justify-center mt-16 space-y-3">
+                        <h2 class="card-title text-black font-bold text-xl">Cake</h2>
+                        <p class="text-lg font-medium text-black">Mushroom Sauce</p>
+                        <h5 class="text-lg font-semibold"><span class="text-red-700">$</span>5.15</h5>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- banner section end  -->
 
     </header>
 
@@ -50,6 +195,50 @@
     <!-- main starts here  -->
     <main>
 
+        <!-- location and contact details section  -->
+        <section class="my-14 md:my-20 lg:my-36">
+
+            <!-- working time  -->
+            <div
+                class="card bg-white w-full drop-shadow-2xl rounded-[50px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-12 py-10">
+                <div class=" items-center text-center border-r-0 lg:border-r-2">
+                    <div class="text-2xl mb-5">
+                        <i class="fa-regular fa-clock bg-primary rounded-full p-3 text-white "></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-black mb-1">Today 10:00am-10:00pm</h4>
+                    <p class="text-black">Working time</p>
+                </div>
+
+                <!-- location  -->
+                <div class=" items-center text-center border-r-0 lg:border-r-2">
+                    <div class="mb-5 flex items-center justify-center mt-10 md:mt-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-12 bg-primary rounded-full text-white p-2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        </svg>
+
+                    </div>
+                    <h4 class="text-lg font-semibold text-black mb-1">Patenga, CHittagong</h4>
+                    <p>Our Location</p>
+
+                </div>
+
+                <!-- contact number  -->
+                <div class="items-center text-center mt-10 lg:mt-0">
+                    <div class="text-2xl mb-5">
+                        <i class="fa-solid fa-phone-volume bg-primary rounded-full p-3 text-white "></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-black mb-1">01632352141</h4>
+                    <p>Phone Number</p>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- location and contact details section end -->
     </main>
     <!-- main ends here  -->
 
