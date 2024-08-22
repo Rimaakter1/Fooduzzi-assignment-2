@@ -45,7 +45,7 @@
 
 <body class="font-Montserrat">
     <!-- header starts here  -->
-    <header class=" w-11/12 md:w-10/12 mx-auto">
+    <header class="w-11/12 md:w-10/12 mx-auto">
         <nav class="navbar mt-7">
             <div class="navbar-start">
                 <div class="dropdown">
@@ -75,23 +75,24 @@
                 </ul>
             </div>
             <div class="navbar-end w-11/12 ">
-                <label class="input drop-shadow-lg rounded-xl flex items-center gap-2 ">
+                <label class="input drop-shadow md:drop-shadow-lg rounded-xl flex items-center gap-2 ml-4 md:ml-0">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                        class="size-8 text-black">
+                        class="size-5 md:size-8 text-black">
                         <path fill-rule="evenodd"
                             d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
                             clip-rule="evenodd" />
                     </svg>
                     <input type="text"
-                        class="grow placeholder:text-black font-semibold mr-3 border-r-2 border-gray-400 text-lg outline-none"
+                        class="grow-0 md:grow w-1/2 placeholder:text-black font-normal md:font-semibold mr-3 border-r-2 border-gray-400 text-sm md:text-lg outline-none"
                         placeholder="Search" />
                     <div class="relative">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="size-10">
+                            stroke="currentColor" class="size-8 md:size-10">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                         </svg>
-                        <div class="bg-primary rounded-full absolute -right-1 -top-0 shadow-orange-500 ">
+                        <div
+                            class="bg-primary rounded-full absolute -right-2 md:-right-1 -top-1 md:-top-2 shadow-orange-500 ">
                             <small class="p-2 text-white">2</small>
                         </div>
                     </div>
@@ -106,6 +107,7 @@
 
             <!-- text content  -->
             <div class="w-full md:w-1/2">
+
                 <div class="bg-orange-100 flex items-center rounded-[32px] pl-3 w-60 justify-between">
                     <p class="text-primary">Bike Delivery</p>
                     <img class="rounded-full p-2" src="images/delivery.png" alt="">
@@ -250,7 +252,7 @@
             </div>
 
             <!-- cards container  -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="popular-items-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                 <!-- card item 1  -->
                 <div class="card card-compact bg-base-100 w-full shadow-xl">
@@ -400,7 +402,7 @@
                 </div>
             </div>
             <div class="mt-12 md:mt-20 flex  justify-center">
-                <button
+                <button id="productBtn" onclick="handleShowMoreProducts()"
                     class="border-none px-6 md:px-8 py-2 md:py-3 bg-primary text-white rounded-[45px] flex items-center gap-2 md:gap-4  text-sm md:text-lg font-medium ">See
                     More
                     Products
@@ -605,28 +607,34 @@
 
 
         <!-- subscribe section  -->
-        <section class="bg-black rounded-md md:rounded-[50px] mb-36 p-4 md:p-0">
-            <div class="flex flex-col md:flex-row items-center justify-center md:justify-between">
+        <section class="bg-black rounded-md md:rounded-[50px] mb-16 md:mb-20 lg:mb-36 px-3  pb-16 md:p-0">
+            <div class="flex flex-col md:flex-row items-center  md:justify-between">
                 <div class="pl-0 md:pl-12">
                     <img src="images/burger.png" alt="">
                 </div>
-                <div class="w-full md:w-1/2 pr-0 md:pr-16 mt-0 md:mt-3 pb-5">
-                    <h2 class="font-bold text-3xl text-white mb-3 text-center md:text-start">Subcribe To Our Newsletter
+                <div class="w-full md:w-1/2 pr-0 md:pr-16 mt-0 md:mt-0 pb-5">
+                    <h2 class="font-bold text-3xl text-white text-center md:text-start mb-3.5">Subcribe To Our
+                        Newsletter
                     </h2>
-                    <p class="text-lg font-normal text-white text-center md:text-justify mb-3">Subscribe to our
+                    <p class="text-lg font-normal text-white text-justify mb-3.5">Subscribe to our
                         newsletter for the
                         latest updates, exclusive offers, and delicious meal ideas delivered straight to your inbox!</p>
-                    <label
-                        class="input drop-shadow-lg rounded-xl flex flex-col md:flex-row items-center gap-2   py-0 md:py-8 md:w-full  ">
-                        <input type="email"
-                            class="grow-0 md:grow placeholder:text-gray-300 font-medium text-lg outline-none"
-                            placeholder="Type your email....." />
-                        <div class="py-0 md:py-8 mt-3 md:mt-0">
-                            <button
-                                class="btn border-none rounded-2xl bg-primary font-semibold text-lg text-white ">SUBSCRIBE</button>
-                        </div>
-                    </label>
+                    <form onsubmit="handleSubscription(event)">
+                        <label
+                            class="input drop-shadow-lg rounded-xl flex flex-col md:flex-row items-center gap-2 py-2 md:py-8 md:w-full  ">
+                            <input type="email" name="email"
+                                class="grow-0 md:grow placeholder:text-gray-300 font-medium text-lg outline-none"
+                                placeholder="Type your email....." />
+                            <div class="py-0 md:py-8 mt-4 md:mt-0">
+                                <button
+                                    class="btn border-none rounded-2xl bg-primary font-semibold text-lg text-white ">SUBSCRIBE</button>
+                            </div>
 
+                        </label>
+                    </form>
+                    <div class="ml-2 text-center text-red-300 mt-4 font-bold text-lg" id="message-container">
+
+                    </div>
                 </div>
             </div>
         </section>
@@ -638,42 +646,47 @@
 
 
     <!-- footer starts here  -->
-    <footer class="bg-[#FAFAFF]">
-        <div class="footer w-11/12 md:w-10/12 mx-auto">
-            <aside>
-                <img src="images/logo" alt="">
-                <p>
-                    ACME Industries Ltd.
-                    <br />
-                    Providing reliable tech since 1992
+    <footer class="bg-[#FAFAFF] pt-10 md:pt-20 pb-5">
+        <div class="footer w-11/12 md:w-10/12 mx-auto gap-5 md:gap-16">
+            <aside class="w-full md:w-11/12">
+                <img src="./images/logo.png" alt="">
+                <p class="mt-6 mb-4 text-gray-500 font-medium">
+                    Stay connected with us! Subscribe to our newsletter for updates, special offers, and more. Follow us
+                    on social media and never miss out on the latest from our kitchen to yours.
                 </p>
+                <div class="text-primary text-3xl mb-10">
+                    <i class="fa-brands fa-facebook-f bg-orange-100 rounded-full px-4 py-3"></i>
+                    <i class="fa-brands fa-twitter bg-orange-100 rounded-full p-3"></i>
+                    <i class="fa-brands fa-linkedin-in bg-orange-100 rounded-full px-4 py-3"></i>
+                    <i class="fa-brands fa-instagram bg-orange-100 rounded-full px-4 py-3"></i>
+                </div>
             </aside>
             <nav>
-                <h6 class="footer-title">Services</h6>
-                <a class="link link-hover">Branding</a>
-                <a class="link link-hover">Design</a>
-                <a class="link link-hover">Marketing</a>
-                <a class="link link-hover">Advertisement</a>
+                <h6 class="text-lg font-bold text-black">Opening Restaurant</h6>
+                <a class="link link-hover  mt-6 md:mt-14 font-medium  text-gray-500">Sat-Wet: 09:00am-10:00PM</a>
+                <a class="link link-hover font-medium  text-gray-500">Thursdayt: 09:00am-11:00PM</a>
+                <a class="link link-hover font-medium  text-gray-500">Friday: 09:00am-8:00PM</a>
             </nav>
             <nav>
-                <h6 class="footer-title">Company</h6>
-                <a class="link link-hover">About us</a>
-                <a class="link link-hover">Contact</a>
-                <a class="link link-hover">Jobs</a>
-                <a class="link link-hover">Press kit</a>
+                <h6 class=" text-lg font-bold text-black ">User Link</h6>
+                <a class="link link-hover mt-6 md:mt-14 font-medium  text-gray-500">About us</a>
+                <a class="link link-hover font-medium  text-gray-500">Contact Us</a>
+                <a class="link link-hover font-medium  text-gray-500">Order Delivery</a>
+                <a class="link link-hover font-medium  text-gray-500">Payment & Tax</a>
+                <a class="link link-hover font-medium  text-gray-500">Terms of Services</a>
             </nav>
             <nav>
-                <h6 class="footer-title">Legal</h6>
-                <a class="link link-hover">Terms of use</a>
-                <a class="link link-hover">Privacy policy</a>
-                <a class="link link-hover">Cookie policy</a>
+                <h6 class=" text-lg font-bold text-black">Contact Us</h6>
+                <a class="link link-hover mt-6 md:mt-14 font-medium  text-gray-500">Patenga,Chittagong</a>
+                <a class="link link-hover font-medium  text-gray-500 "> +880-1632352141</a>
+                <a class="link link-hover font-medium  text-gray-500">+880-1846047272</a>
             </nav>
         </div>
     </footer>
 
     <!-- footer ends here  -->
 
-    <script src="./js-files/index.js"></script>
+    <script src="./js-files/script.js"></script>
 </body>
 
 </html>
