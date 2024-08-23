@@ -91,14 +91,16 @@ function handleSubscription(event) {
     messageContainer.innerHTML = " ";
 
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (!email.match(validRegex)) {
-        emailParagraph.innerText = "Thanks for Subscribing"
+    if (email.match(validRegex)) {
+        emailParagraph.innerText = "Thanks for Subscribing";
+        emailParagraph.style.color = "rgb(22 163 74)"
         messageContainer.appendChild(emailParagraph);
-        subscribeButton.disabled = true;
+        // subscribeButton.disabled = true;
 
     }
     else {
         emailParagraph.innerText = "Please enter valid email";
+        emailParagraph.style.color = "red"
         messageContainer.appendChild(emailParagraph);
     }
 }
