@@ -13,7 +13,7 @@ const itemsArray = [
     },
     {
         url: "./images/item-9.jpg",
-        name: "Beef Salad",
+        name: "Spaghetti",
         rating: "4.0",
         price: 25.00
     },
