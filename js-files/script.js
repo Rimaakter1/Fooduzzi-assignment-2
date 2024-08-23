@@ -37,55 +37,49 @@ const itemsArray = [
     },
 ]
 
+const itemsContainer = document.getElementById('popular-items-container');
+const productMoreButton = document.getElementById('product-more-button');
+const productLessButton = document.getElementById('product-less-button');
+
 
 function handleShowMoreProducts() {
-    const itemsContainer = document.getElementById('popular-items-container');
-    const productMoreButton = document.getElementById('product-more-button');
-    const productLessButton = document.getElementById('product-less-button');
     for (const item of itemsArray) {
         const itemsDivImage = document.createElement('div');
-
-        if (!productMoreButton) {
-            itemsContainer.innerHTML = " ";
-        }
-
-
-        else {
-            itemsDivImage.classList.add("card", "card-compact", "bg-base-100", "w-full", "shadow-xl")
-            itemsDivImage.innerHTML = ` <figure>
+        itemsDivImage.classList.add("card", "card-compact", "bg-base-100", "w-full", "shadow-xl")
+        itemsDivImage.innerHTML = ` <figure>
         <img class="w-full h-full" src="${item.url}" alt="Gyro Sandwhic" />
-    </figure>
-    <div class="card-body">
+      </figure>
+      <div class="card-body">
         <div class="flex items-center justify-between">
-            <h2 class="card-title text-black font-bold tex-2xl mt-2">${item.name}</h2>
-            <div class="flex items-center gap-2">
-                <div class="rating">
-                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
-                </div>
-                <p class="text-black font-normal text-lg">${item.rating}</p>
+          <h2 class="card-title text-black font-bold tex-2xl mt-2">${item.name}</h2>
+          <div class="flex items-center gap-2">
+            <div class="rating">
+              <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
             </div>
+            <p class="text-black font-normal text-lg">${item.rating}</p>
+          </div>
         </div>
         <div class="card-actions flex items-center justify-between mt-4">
-            <button class="btn bg-primary text-white rounded-full px-5">Add To Cart</button>
-            <div>
-                <p class="text-black font-medium text-lg">$${item.price}</p>
-            </div>
+          <button class="btn bg-primary text-white rounded-full px-5">Add To Cart</button>
+          <div>
+            <p class="text-black font-medium text-lg">$${item.price}</p>
+          </div>
         </div>
-    </div>
-     `
-            itemsContainer.appendChild(itemsDivImage);
-            console.log(itemsDivImage)
-            productMoreButton.style.display = "none";
-            productLessButton.style.display = "block"
-        }
+      </div>
+       `
+        itemsContainer.appendChild(itemsDivImage);
     }
-
-
-
-
-
+    productMoreButton.style.display = "none";
+    productLessButton.style.display = "block";
 }
 
+function handleShowLessProducts() {
+    while (itemsContainer.children.length > 6) {
+        itemsContainer.removeChild(itemsContainer.lastChild);
+    }
+    productMoreButton.style.display = "block";
+    productLessButton.style.display = "none";
+}
 
 
 function handleSubscription(event) {
@@ -103,12 +97,8 @@ function handleSubscription(event) {
         subscribeButton.disabled = true;
 
     }
-
     else {
         emailParagraph.innerText = "Please enter valid email";
         messageContainer.appendChild(emailParagraph);
     }
-
-
-
 }
