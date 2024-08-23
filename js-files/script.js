@@ -47,7 +47,7 @@ function handleShowMoreProducts() {
         const itemsDivImage = document.createElement('div');
         itemsDivImage.classList.add("card", "card-compact", "bg-base-100", "w-full", "shadow-xl")
         itemsDivImage.innerHTML = ` <figure>
-        <img class="w-full h-full" src="${item.url}" alt="Gyro Sandwhic" />
+        <img class="w-full h-full" src="${item.url}" alt="${item.name}" />
       </figure>
       <div class="card-body">
         <div class="flex items-center justify-between">
@@ -60,7 +60,7 @@ function handleShowMoreProducts() {
           </div>
         </div>
         <div class="card-actions flex items-center justify-between mt-4">
-          <button class="btn bg-primary text-white rounded-full px-5">Add To Cart</button>
+          <button class="btn bg-primary text-white rounded-full px-5 hover:bg-orange-500 border-none">Add To Cart</button>
           <div>
             <p class="text-black font-medium text-lg">$${item.price}</p>
           </div>
