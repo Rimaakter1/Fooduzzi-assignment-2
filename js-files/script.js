@@ -37,11 +37,13 @@ const itemsArray = [
     },
 ]
 
+
+
 const itemsContainer = document.getElementById('popular-items-container');
 const productMoreButton = document.getElementById('product-more-button');
 const productLessButton = document.getElementById('product-less-button');
 
-
+// show more products 
 function handleShowMoreProducts() {
     for (const item of itemsArray) {
         const itemsDivImage = document.createElement('div');
@@ -73,6 +75,8 @@ function handleShowMoreProducts() {
     productLessButton.style.display = "block";
 }
 
+
+// show less products 
 function handleShowLessProducts() {
     while (itemsContainer.children.length > 6) {
         itemsContainer.removeChild(itemsContainer.lastChild);
@@ -81,6 +85,8 @@ function handleShowLessProducts() {
     productLessButton.style.display = "none";
 }
 
+
+// subscription message and error message 
 
 function handleSubscription(event) {
     event.preventDefault();
@@ -99,7 +105,7 @@ function handleSubscription(event) {
 
     }
     else {
-        emailParagraph.innerText = "Please enter valid email";
+        emailParagraph.innerText = "Please enter your email address";
         emailParagraph.style.color = "red"
         messageContainer.appendChild(emailParagraph);
     }
