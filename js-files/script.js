@@ -40,12 +40,17 @@ const itemsArray = [
 
 function handleShowMoreProducts() {
     const itemsContainer = document.getElementById('popular-items-container');
-    const productButton = document.getElementById('productBtn');
+    const productMoreButton = document.getElementById('product-more-button');
+    const productLessButton = document.getElementById('product-less-button');
     for (const item of itemsArray) {
         const itemsDivImage = document.createElement('div');
 
-        if (productButton.innerText == "See More Products") {
-            productButton.innerHTML = "Show less Products";
+        if (!productMoreButton) {
+            itemsContainer.innerHTML = " ";
+        }
+
+
+        else {
             itemsDivImage.classList.add("card", "card-compact", "bg-base-100", "w-full", "shadow-xl")
             itemsDivImage.innerHTML = ` <figure>
         <img class="w-full h-full" src="${item.url}" alt="Gyro Sandwhic" />
@@ -68,16 +73,15 @@ function handleShowMoreProducts() {
         </div>
     </div>
      `
-            productButton.innerHTML = "Show less Products";
             itemsContainer.appendChild(itemsDivImage);
             console.log(itemsDivImage)
+            productMoreButton.style.display = "none";
+            productLessButton.style.display = "block"
         }
-
-        else {
-            productButton.innerHTML = "Show More Products";
-        }
-
     }
+
+
+
 
 
 }
@@ -88,9 +92,23 @@ function handleSubscription(event) {
     event.preventDefault();
     const email = event.target.email.value;
     const messageContainer = document.getElementById("message-container")
+    const subscribeButton = document.getElementById('subscribe-btn');
     const emailParagraph = document.createElement('p');
-    emailParagraph.innerText = "Thanks for Subscribing"
-    messageContainer.appendChild(emailParagraph);
+    messageContainer.innerHTML = " ";
+
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!email.match(validRegex)) {
+        emailParagraph.innerText = "Thanks for Subscribing"
+        messageContainer.appendChild(emailParagraph);
+        subscribeButton.disabled = true;
+
+    }
+
+    else {
+        emailParagraph.innerText = "Please enter valid email";
+        messageContainer.appendChild(emailParagraph);
+    }
+
 
 
 }
