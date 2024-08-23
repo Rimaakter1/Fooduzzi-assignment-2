@@ -45,7 +45,7 @@ const productLessButton = document.getElementById('product-less-button');
 function handleShowMoreProducts() {
     for (const item of itemsArray) {
         const itemsDivImage = document.createElement('div');
-        itemsDivImage.classList.add("card", "card-compact", "bg-base-100", "w-full", "shadow-xl")
+        itemsDivImage.classList.add("card", "card-compact", "rounded-[35px]", "bg-base-100", "w-full", "shadow-xl")
         itemsDivImage.innerHTML = ` <figure>
         <img class="w-full h-full" src="${item.url}" alt="${item.name}" />
       </figure>

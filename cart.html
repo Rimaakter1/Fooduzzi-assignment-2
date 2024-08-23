@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fooduzzi</title>
+
+    <!-- favicon  -->
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+
+    <!-- Google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- font awesome link  -->
+    <script src="https://kit.fontawesome.com/d8894525ac.js" crossorigin="anonymous"></script>
+
+    <!-- tailwind and daisy ui cdn link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F48E28',
+                    },
+                    fontFamily: {
+                        Montserrat: 'Montserrat',
+                    },
+
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="font-Montserrat">
+
+    <!-- header starts here  -->
+    <header class="w-11/12 md:w-10/12 mx-auto">
+
+        <!-- navbar starts here  -->
+        <nav class="navbar mt-7">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-black font-semibold text-lg">
+                        <li class="hover:text-primary"><a href="index.html">Home</a></li>
+                        <li class="hover:text-primary"><a href="#">Cart</a></li>
+                    </ul>
+                </div>
+                <a href="#"><img src="./images/logo.png" alt=""></a>
+            </div>
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1 text-black font-semibold text-lg">
+                    <li class="hover:text-primary"><a href="index.html">Home</a></li>
+                    <li class="hover:text-primary"><a href="#">Cart</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end w-11/12 ">
+                <label class="input drop-shadow md:drop-shadow-lg rounded-xl flex items-center gap-2 ml-4 md:ml-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="size-5 md:size-8 text-black">
+                        <path fill-rule="evenodd"
+                            d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <input type="text"
+                        class="grow-0 md:grow w-1/2 placeholder:text-black font-normal md:font-semibold mr-3 border-r-2 border-gray-400 text-sm md:text-lg outline-none"
+                        placeholder="Search" />
+                    <div class="relative">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-8 md:size-10">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                        </svg>
+                        <div
+                            class="bg-primary rounded-full absolute -right-2 md:-right-1 -top-1 md:-top-2 shadow-orange-500 ">
+                            <small class="p-2 text-white">2</small>
+                        </div>
+                    </div>
+
+                </label>
+
+            </div>
+        </nav>
+        <!-- navbar end  -->
+
+    </header>
+
+    <!-- header ends here  -->
+
+    <!-- main starts here  -->
+    <main class="w-11/12 md:w-10/12 mx-auto  my-20">
+
+        <!-- cart section starts here  -->
+
+        <section class=" bg-gray-100 shadow-lg rounded p-10">
+            <ul>
+                <li class="flex flex-col md:flex-row justify-between items-center mb-4">
+                    <img src="images/item-2.png" alt="Food Item 1" class="w-40 h-40 rounded object-cover">
+                    <div class=" pl-4">
+                        <h2 class="text-lg font-bold">Enchilade</h2>
+                        <p class="text-gray-600">Quantity: 1</p>
+                        <p class="text-gray-600">Price: $25.50</p>
+                    </div>
+                    <div>
+                        <button
+                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Remove</button>
+                        <button
+                            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded ml-2">+</button>
+                        <button
+                            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded ml-2">-</button>
+                    </div>
+                </li>
+                <li class="flex flex-col md:flex-row justify-between items-center mb-4">
+                    <img src="images/item-4.png" alt="Food Item 2" class="w-40 h-40 rounded object-cover">
+                    <div class=" pl-4">
+                        <h2 class="text-lg font-bold">Pizza</h2>
+                        <p class="text-gray-600">Quantity: 1</p>
+                        <p class="text-gray-600">Price: $18.50</p>
+                    </div>
+                    <div>
+                        <button
+                            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Remove</button>
+                        <button
+                            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded ml-2">+</button>
+                        <button
+                            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded ml-2">-</button>
+                    </div>
+                </li>
+            </ul>
+            <p class="text-lg font-bold mb-4 text-center">Total: $44.00</p>
+            <div class="text-center">
+                <button
+                    class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">Checkout</button>
+
+            </div>
+        </section>
+        <!-- cart section end  -->
+
+    </main>
+    <!-- main ends here  -->
+
+
+    <!-- footer starts here  -->
+    <footer class="bg-[#FAFAFF] pt-10 md:pt-20 pb-5">
+        <div class="footer w-11/12 md:w-10/12 mx-auto gap-5 md:gap-16">
+            <aside class="w-full md:w-11/12">
+                <img src="./images/logo.png" alt="">
+                <p class="mt-6 mb-4 text-gray-500 font-medium">
+                    Stay connected with us! Subscribe to our newsletter for updates, special offers, and more. Follow us
+                    on social media and never miss out on the latest from our kitchen to yours.
+                </p>
+                <div class="text-primary text-3xl mb-10">
+                    <i class="fa-brands fa-facebook-f bg-orange-100 rounded-full px-4 py-3"></i>
+                    <i class="fa-brands fa-twitter bg-orange-100 rounded-full p-3"></i>
+                    <i class="fa-brands fa-linkedin-in bg-orange-100 rounded-full px-4 py-3"></i>
+                    <i class="fa-brands fa-instagram bg-orange-100 rounded-full px-4 py-3"></i>
+                </div>
+            </aside>
+            <nav>
+                <h6 class="text-lg font-bold text-black">Opening Restaurant</h6>
+                <a class="link link-hover  mt-6 md:mt-14 font-medium  text-gray-500">Sat-Wet: 09:00am-10:00PM</a>
+                <a class="link link-hover font-medium  text-gray-500">Thursdayt: 09:00am-11:00PM</a>
+                <a class="link link-hover font-medium  text-gray-500">Friday: 09:00am-8:00PM</a>
+            </nav>
+            <nav>
+                <h6 class=" text-lg font-bold text-black ">User Link</h6>
+                <a class="link link-hover mt-6 md:mt-14 font-medium  text-gray-500">About us</a>
+                <a class="link link-hover font-medium  text-gray-500">Contact Us</a>
+                <a class="link link-hover font-medium  text-gray-500">Order Delivery</a>
+                <a class="link link-hover font-medium  text-gray-500">Payment & Tax</a>
+                <a class="link link-hover font-medium  text-gray-500">Terms of Services</a>
+            </nav>
+            <nav>
+                <h6 class=" text-lg font-bold text-black">Contact Us</h6>
+                <a class="link link-hover mt-6 md:mt-14 font-medium  text-gray-500">Patenga,Chittagong</a>
+                <a class="link link-hover font-medium  text-gray-500 "> +880-1632352141</a>
+                <a class="link link-hover font-medium  text-gray-500">+880-1846047272</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- footer ends here  -->
+
+</body>
+
+</html>
